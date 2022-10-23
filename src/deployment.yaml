@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Deployment
+metadata: 
+  name: meudeployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+  apiVersion: v1
+kind: Pod
+metadata: 
+  name: meupod-conversao-temperatura
+  labels:
+    cor: verde
+spec:
+  containers: 
+  - name: site
+    image: node:18.11.0
+    ports:
+    -containerPort: 8080
